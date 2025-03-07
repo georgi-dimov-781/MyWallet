@@ -1,5 +1,5 @@
 
-# Online Shop App
+# Online Wallet app
 
 This is e-wallet web application built with React and Vite. This application provides online shopping experience with user authentication, product management, shopping cart, and admin features.
 
