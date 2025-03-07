@@ -1,0 +1,761 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  /* Light theme (default) */
+  --body-bg: #f8f9fa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --border-color: #dee2e6;
+  --nav-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --primary-color: #0d6efd;
+  --body-bg: #121212;
+  --text-color: #e1e1e1;
+  --card-bg: #1e1e1e;
+  --border-color: #333333;
+  --nav-bg: #1e1e1e;
+  --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--body-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-color: var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #d32f2f;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.alert {
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.nav-tabs {
+  display: flex;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.nav-tabs li {
+  margin-right: 10px;
+}
+
+.nav-tabs a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #555;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs a.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  overflow: hidden;
+  transition: transform 0.3s;
+  border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: 15px;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.product-category {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.wallet-balance {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 15px 0;
+}
+
+.transactions-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  background-color: #e3f2fd;
+  color: var(--primary-color);
+  margin-right: 5px;
+}
+
+.chart-container {
+  height: 300px;
+  margin: 20px 0;
+}
+
+/* Swiper Styles */
+.swiper-container {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.products-swiper {
+  --swiper-navigation-color: var(--primary-color);
+  --swiper-navigation-size: 25px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .products-swiper {
+    --swiper-navigation-size: 20px;
+  }
+
+  .swiper-slide {
+    width: 100% !important;
+  }
+
+  .swiper-container .swiper-wrapper {
+    display: flex;
+  }
+}
+
+/* Profile Settings Styles */
+.nav-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-tabs li {
+  margin-right: 10px;
+}
+
+.nav-tabs a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 8px;
+}
+
+/* Advanced Filters Styles */
+.advanced-filters {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* Export Button Styles */
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-export {
+  background-color: #4caf50;
+  color: white;
+}
+
+.search-bar {
+  margin-bottom: 15px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Social sharing styles */
+.social-share-container {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.share-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-button {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social-button:hover {
+  transform: scale(1.1);
+}
+
+.product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.share-options {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Cart styles */
+.cart-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-items {
+  overflow-x: auto;
+  display: block;
+}
+
+.cart-items th,
+.cart-items td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-summary {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  height: fit-content;
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 768px) {
+  .desktop-menu, .desktop-user-actions {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+
+/* Responsive navbar styles */
+.navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+}
+
+/* Navbar specific styles */
+.navbar {
+  background-color: #1976d2; /* Restore blue color */
+  color: white;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 4px;
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-button {
+  background-color: var(--button-bg); /* Assuming --button-bg is defined elsewhere */
+  color: var(--button-text); /* Assuming --button-text is defined elsewhere */
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.theme-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.desktop-menu, .desktop-user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-user-actions span:first-of-type {
+  margin-right: 5px;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding: 0; /* Remove padding */
+  margin-top: 0; /* Remove margin */
+  background-color: #2184e0; /* Slightly lighter blue for the menu */
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* position: absolute; */
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.navbar-mobile-link {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  text-align: left;
+}
+
+.navbar-mobile-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-user-actions {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 20px;
+  color: white;
+}
+
+.mobile-user-actions span,
+.mobile-user-actions button {
+  margin: 5px 0;
+  color: white;
+}
+
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* === Table and Content Layout Styling === */
+
+/* Make all tables display as block elements with proper spacing */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+/* Target specific components that need column layout */
+.card div[style*="display: flex"], 
+.card div[style*="display:flex"] {
+  display: flex !important;
+  /* flex-direction: column !important; */
+  /* width: 100% !important; */
+  flex-wrap: wrap;
+}
+
+/* Make sure flex children take full width */
+.card div[style*="display: flex"] > div,
+.card div[style*="display:flex"] > div {
+  width: 100% !important;
+  flex: 1 1 100% !important;
+  margin-bottom: 20px;
+}
+
+/* Target chart containers specifically */
+.card div[style*="height: 300px"],
+.chart-container {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  order: -1 !important;
+}
+
+/* Ensure tables are always at the bottom */
+.card table,
+.card div[style*="display: flex"] table,
+.card div[style*="display:flex"] table {
+  order: 999 !important;
+  margin-top: 20px !important;
+}
+
+/* Fix for Summary sections to appear before tables */
+.card h3,
+.card div:has(> h3) {
+  order: -1 !important;
+}
+
+/* Fix for wallet balance to appear before transactions */
+.wallet-balance {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  order: -1 !important;
+}
+
+/* Wallet specific styles */
+.wallet-container {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.wallet-container h3 {
+  margin-top: 25px !important;
+  margin-bottom: 15px !important;
+}
+
+.wallet-container h3:first-of-type {
+  margin-top: 0 !important;
+}
+
+/* Proper ordering for wallet elements */
+.wallet-container .wallet-balance {
+  order: 1 !important;
+}
+
+.wallet-container form {
+  order: 2 !important; 
+  margin-bottom: 20px !important;
+}
+
+.wallet-container .transactions-list {
+  order: 3 !important;
+}
+
+.wallet-container .transactions-list h3 {
+  margin-top: 10px !important;
+}
+
+.wallet-container table {
+  margin-top: 5px !important;
+}
+
+/* Override any display flex that might be inline in the Wallet component */
+div[style*="display: flex"][style*="gap: 20px"] {
+  display: flex !important;
+  /* flex-direction: column !important; */
+  gap: 20px !important;
+}
+
+/* Specific fix for Reports component */
+.card div[style*="display: flex"] > div:first-child {
+  order: -1 !important;
+}
+
+.card div[style*="display: flex"] > div:nth-child(2) {
+  order: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile-specific overrides with !important to ensure they take precedence */
+  .card div[style*="display: flex"],
+  .card div[style*="display:flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .card div[style*="display: flex"] > div,
+  .card div[style*="display:flex"] > div {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Force all tables to appear at the bottom on mobile */
+  table {
+    order: 999 !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure all charts appear at the top */
+  .chart-container,
+  div[style*="height: 300px"],
+  canvas {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    order: -1 !important;
+  }
+}
